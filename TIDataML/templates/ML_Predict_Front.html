@@ -28,7 +28,7 @@
         if (xhr.readyState === xhr.DONE) {
             if (xhr.status === 200 || xhr.status === 201) {
 		const response = JSON.parse(xhr.responseText);
-		location.href = 'http://192.168.5.12:8888/t1_db_test_arch02/defectiveListFirst.jsp';
+		location.href = 'http://192.168.5.12:8888/tiproject/defectiveListFirst.jsp';
                 console.log(response);
 	   var a = `${response.wrongGuessRate}`;
 	   alert("이번 공정의 오류율은 " +a+ "%입니다.");

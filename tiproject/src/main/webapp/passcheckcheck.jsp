@@ -13,7 +13,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>��й�ȣ üũ ������</title>
+<title>비밀번호 체크 페이지</title>
 </head>
 <style>
 body {
@@ -75,16 +75,16 @@ th {
 try{
 	
 	String url="jdbc:oracle:thin:@192.168.5.12:1521:XE";
-	String uid="testuser";
-	String pass="testuser";
+	String uid="admin";
+	String pass="admin";
 	
 	Connection conn = null;
 	Statement stmt = null;
 	ResultSet rs = null;
 	Class.forName("oracle.jdbc.driver.OracleDriver");
-	System.out.println("����̹� �ε� ����");
+	System.out.println("드라이버 로딩 성공");
 	conn = DriverManager.getConnection(url, uid, pass);
-	System.out.println("���� ����");
+	System.out.println("연결 성공");
 
 	String user_pw = request.getParameter("pwd");
 
@@ -104,13 +104,13 @@ try{
 		String pwdflag = "yes";
 		%>
 		<script>
-		alert("Ȯ�εǾ����ϴ�.");
+		alert("확인되었습니다.");
 		</script>
 		<%
 		 response.sendRedirect("defectiveList.jsp");
 	}else{
 		%> <script type="text/javascript">
-			alert("�ùٸ� ��й�ȣ�� �ƴմϴ�.");
+			alert("올바른 비밀번호가 아닙니다.");
 		   	history.go(-1);
 		    </script>
 		<% 

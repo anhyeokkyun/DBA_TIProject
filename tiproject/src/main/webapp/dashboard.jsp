@@ -18,7 +18,7 @@ request.setCharacterEncoding("EUC-KR");
 <html>
 <head>
 <meta charset="UTF-8">
-<title>½Ç½Ã°£ °øÁ¤ Á¤º¸</title>
+<title>ì‹¤ì‹œê°„ ê³µì • ì •ë³´</title>
 </head>
 <script type="text/javascript">
    window.history.forward();
@@ -27,7 +27,7 @@ request.setCharacterEncoding("EUC-KR");
    }
 
    function logout() {
-      alert("·Î±×¾Æ¿ô ÇÕ´Ï´Ù.");
+      alert("ë¡œê·¸ì•„ì›ƒ í•©ë‹ˆë‹¤.");
    }
 </script>
 <style>
@@ -159,17 +159,17 @@ form {
 
    <div id="head">
       <div id="h2div">
-         <h2>½Ç½Ã°£ °øÁ¤ Á¤º¸</h2>
+         <h2>ì‹¤ì‹œê°„ ê³µì • ì •ë³´</h2>
       </div>
       <div id="btndiv">
          <div id="prodiv" align="right">
             <form method="post" action="processStart.jsp"  id ="div1">
-               <input type="submit" value="°øÁ¤½ÃÀÛ" id="prostartbtn" />
+               <input type="submit" value="ê³µì •ì‹œì‘" id="prostartbtn" />
             </form>
          </div>
          <div id="logoutdiv" align="right">
             <form action="logout.jsp" id = "div2">
-               <button onclick="logout()" id="logoutbtn">·Î±×¾Æ¿ô</button>
+               <button onclick="logout()" id="logoutbtn">ë¡œê·¸ì•„ì›ƒ</button>
             </form>
          </div>
 
@@ -197,17 +197,17 @@ form {
 	
 	try {
 		String url = "jdbc:oracle:thin:@192.168.5.12:1521:XE";
-		String uid = "testuser";
-		String pass = "testuser";
+		String uid = "admin";
+		String pass = "admin";
 		Class.forName("oracle.jdbc.driver.OracleDriver");
-		System.out.println("µå¶óÀÌ¹ö ·Îµù ¼º°ø");
+		System.out.println("ë“œë¼ì´ë²„ ë¡œë”© ì„±ê³µ");
 		Connection conn = null;
 		Statement stmt = null;
 		conn = DriverManager.getConnection(url, uid, pass);
-		System.out.println("¿¬°á ¼º°ø");
+		System.out.println("ì—°ê²° ì„±ê³µ");
 		stmt = conn.createStatement();
 		
-		// prod Å×ÀÌºí
+		// prod í…Œì´ë¸”
 		String sql = "SELECT * FROM PROD";
 		ResultSet rs = null;
 		rs = stmt.executeQuery(sql);
@@ -225,7 +225,7 @@ form {
 			all++;
 		}
 
-		// dashboard Å×ÀÌºí ERROR_RATE
+		// dashboard í…Œì´ë¸” ERROR_RATE
 //		String query = "SELECT ERROR_RATE FROM DASHBOARD WHERE PROCESS_NO=(SELECT MAX(PROCESS_NO) FROM DASHBOARD)";
 //		stmt = conn.createStatement();
 //		ResultSet queryrs = stmt.executeQuery(query);
@@ -259,7 +259,7 @@ form {
 	       
 	    System.out.println("todayTotalError: "+todayTotalError);
 
-		// ¼öÀ²
+		// ìˆ˜ìœ¨
 		PreparedStatement pstmt3 = null;
 		pstmt3 = conn.prepareStatement("select avg(yield) from dashboard where SUBSTR(end_time,0,10) in (select to_char(sysdate,'yyyy:mm:dd') from dual)");
 		ResultSet yieldrs = pstmt3.executeQuery();
@@ -279,17 +279,17 @@ form {
 	
    <table>
       <tr>
-         <th><span style="font-size: 1em; color: white;" class= "thcls"> ±İÀÏ °øÁ¤ È½¼ö
+         <th><span style="font-size: 1em; color: white;" class= "thcls"> ê¸ˆì¼ ê³µì • íšŸìˆ˜
          </span></th>
          <th><span style="font-size: 1em; color: white;" class= "thcls"> ALL Goods
          </span></th>
          <th><span style="font-size: 1em; color: white;" class= "thcls"> ALL Defects
          </span></th>
-         <th><span style="font-size: 1em; color: white;" class= "thcls"> µ¥ÀÌÅÍ ÃÑ ¼öÀ²
+         <th><span style="font-size: 1em; color: white;" class= "thcls"> ë°ì´í„° ì´ ìˆ˜ìœ¨
          </span></th>
       </tr>
       <tr align="center">
-		 <td class="tdcls"><span style="font-size: 1em; color: white;"> <% out.print(countTodaycount + " È¸");%>
+		 <td class="tdcls"><span style="font-size: 1em; color: white;"> <% out.print(countTodaycount + " íšŒ");%>
          </span></td>
          <td class="tdcls"><span style="font-size: 1em; color: white;"> <% out.println(one);%>
          </span></td>
@@ -304,9 +304,9 @@ form {
    </table>
    <table>
       <tr>
-         <th><span style="font-size: 1em; color: white;" class= "thcls"> ¿À´Ã °øÁ¤ Æò±Õ ¿À·ùÀ²
+         <th><span style="font-size: 1em; color: white;" class= "thcls"> ì˜¤ëŠ˜ ê³µì • í‰ê·  ì˜¤ë¥˜ìœ¨
          </span></th>
-         <th><span style="font-size: 1em; color: white;" class= "thcls"> ¿À´Ã °øÁ¤ Æò±Õ ¼öÀ²
+         <th><span style="font-size: 1em; color: white;" class= "thcls"> ì˜¤ëŠ˜ ê³µì • í‰ê·  ìˆ˜ìœ¨
          </span></th>
       </tr>
       <tr align="center">

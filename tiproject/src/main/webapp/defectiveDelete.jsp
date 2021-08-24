@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>ºÒ·®Ç°¸ñ ÆäÀÌÁö_postdel</title>
+<title>ë¶ˆëŸ‰í’ˆëª© íŽ˜ì´ì§€_postdel</title>
 </head>
 <style>
 body {
@@ -87,23 +87,23 @@ th {
 	%>
 
 	<div id="wrap" align="center">
-		<h2>¿­È­»ó ¾ç/ºÒ·® ÆÇÁ¤ ÇÁ·Î±×·¥</h2>
+		<h2>ì—´í™”ìƒ ì–‘/ë¶ˆëŸ‰ íŒì • í”„ë¡œê·¸ëž¨</h2>
 	</div>
 
 	<%
 try{
 	String url="jdbc:oracle:thin:@192.168.5.12:1521:XE";
-	String uid="testuser";
-	String pass="testuser";
+	String uid="admin";
+	String pass="admin";
 	String sql = "SELECT * FROM DEFECTIVE";
 	
 	Connection conn = null;
 	Statement stmt = null;
 	ResultSet rs = null;
 	Class.forName("oracle.jdbc.driver.OracleDriver");
-	System.out.println("µå¶óÀÌ¹ö ·Îµù ¼º°ø");
+	System.out.println("ë“œë¼ì´ë²„ ë¡œë”© ì„±ê³µ");
 	conn = DriverManager.getConnection(url, uid, pass);
-	System.out.println("¿¬°á ¼º°ø");
+	System.out.println("ì—°ê²° ì„±ê³µ");
 	stmt = conn.createStatement();
 	rs = stmt.executeQuery(sql);
 	
@@ -117,14 +117,14 @@ try{
 				<thead>
 					<tr>
 						<td colspan="5" id="desc"
-							style="border: white; color: white; text-align: left">¡Ø °¨ÁöµÈ ºÒ·®Ç° ¸ñ·Ï ÀÔ´Ï´Ù. Æó±â½ÃÅ³ ºÒ·®Ç° ¸ñ·ÏÀ» ¼±ÅÃÇÏ¼¼¿ä.</td>
+							style="border: white; color: white; text-align: left">â€» ê°ì§€ëœ ë¶ˆëŸ‰í’ˆ ëª©ë¡ ìž…ë‹ˆë‹¤. íê¸°ì‹œí‚¬ ë¶ˆëŸ‰í’ˆ ëª©ë¡ì„ ì„ íƒí•˜ì„¸ìš”.</td>
 					</tr>
 					<tr>
-						<th id="checkboxtbl">Ã¼Å©</th>
-						<th>Ç°¹ø</th>
-						<th>input ½Ã°£</th>
-						<th>output ½Ã°£</th>
-						<th>Á¦Ç° À§Ä¡(L/R)</th>
+						<th id="checkboxtbl">ì²´í¬</th>
+						<th>í’ˆë²ˆ</th>
+						<th>input ì‹œê°„</th>
+						<th>output ì‹œê°„</th>
+						<th>ì œí’ˆ ìœ„ì¹˜(L/R)</th>
 					</tr>
 				</thead>
 
@@ -150,8 +150,8 @@ try{
 			</table>
 		</div>
 		<div style="width: 60%; text-align: right; margin: 0 auto;">
-			<input type="submit" value="Æó±â" class="inbutton" /> &nbsp; &nbsp;
-			&nbsp; &nbsp; &nbsp; <input type="button" value="¸ÞÀÎ È­¸é"
+			<input type="submit" value="íê¸°" class="inbutton" /> &nbsp; &nbsp;
+			&nbsp; &nbsp; &nbsp; <input type="button" value="ë©”ì¸ í™”ë©´"
 				class="inbutton" onclick="location.href='dashboard.jsp'" />
 		</div>
 	</form>
@@ -173,7 +173,7 @@ try{
 				}
 			}
 			if (count == tbody) {
-				alert("¼±ÅÃµÈ Ç°¸ñÀÌ ¾ø½À´Ï´Ù.");
+				alert("ì„ íƒëœ í’ˆëª©ì´ ì—†ìŠµë‹ˆë‹¤.");
 				return false;
 			}
 			return true;
@@ -188,7 +188,7 @@ try{
 	if(res==chbox.length){
 		%>
 	<script type="text/javascript">
-			alert("¼±ÅÃÇÑ Á¦Ç°¸ñ·ÏÀ» »èÁ¦ÇÏ¿´½À´Ï´Ù.");
+			alert("ì„ íƒí•œ ì œí’ˆëª©ë¡ì„ ì‚­ì œí•˜ì˜€ìŠµë‹ˆë‹¤.");
 		</script>
 	<%
 	}

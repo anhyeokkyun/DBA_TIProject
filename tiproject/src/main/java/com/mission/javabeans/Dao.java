@@ -11,8 +11,8 @@ public class Dao {
       PreparedStatement pstmt = null;
       int[] count = null;
       String url = "jdbc:oracle:thin:@192.168.5.12:1521:XE";
-      String uid = "testuser";
-      String pass = "testuser";
+      String uid = "admin";
+      String pass = "admin";
 //      Class.forName("oracle.jdbc.driver.OracleDriver");
 //      
       try {

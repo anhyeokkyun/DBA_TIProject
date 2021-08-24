@@ -32,8 +32,8 @@ request.setCharacterEncoding("EUC-KR");
 	
 	try {
 		String url = "jdbc:oracle:thin:@192.168.5.12:1521:XE";
-		String uid = "testuser";
-		String pass = "testuser";
+		String uid = "admin";
+		String pass = "admin";
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		System.out.println("드라이버 로딩 성공");
 		Connection conn = null;

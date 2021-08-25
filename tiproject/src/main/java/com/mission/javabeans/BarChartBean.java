@@ -29,8 +29,8 @@ public class BarChartBean {
 		try {
 			String driver = "oracle.jdbc.driver.OracleDriver";
 			String url = "jdbc:oracle:thin:@192.168.5.12:1521:XE";
-			String user = "admin";
-			String pass = "admin";
+			String user = "testuser";
+			String pass = "testuser";
 			Connection con = null;
 			Class.forName(driver);
 			con = DriverManager.getConnection(url, user, pass);

@@ -13,22 +13,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>ë¡œê·¸ì¸ ì²´í¬ íŽ˜ì´ì§€</title>
+<title>·Î±×ÀÎ Ã¼Å© ÆäÀÌÁö</title>
 </head>
 <body>
 <%
 try{
 	String url="jdbc:oracle:thin:@192.168.5.12:1521:XE";
-	String uid="admin";
-	String pass="admin";
+	String uid="testuser";
+	String pass="testuser";
 	
 	Connection conn = null;
 	Statement stmt = null;
 	ResultSet rs = null;
 	Class.forName("oracle.jdbc.driver.OracleDriver");
-	System.out.println("ë“œë¼ì´ë²„ ë¡œë”© ì„±ê³µ");
+	System.out.println("µå¶óÀÌ¹ö ·Îµù ¼º°ø");
 	conn = DriverManager.getConnection(url, uid, pass);
-	System.out.println("ì—°ê²° ì„±ê³µ");
+	System.out.println("¿¬°á ¼º°ø");
 
 	
 	String user_id = request.getParameter("id");
@@ -50,7 +50,7 @@ try{
 		session.setAttribute("pwd", user_pw);
 		response.sendRedirect("dashboard.jsp");
 	}else{
-		%> <script type="text/javascript">alert("ì•„ì´ë”” ë˜ëŠ” ë¹„ë°€ë²ˆí˜¸ê°€ ë§žì§€ ì•ŠìŠµë‹ˆë‹¤.");
+		%> <script type="text/javascript">alert("¾ÆÀÌµð ¶Ç´Â ºñ¹Ð¹øÈ£°¡ ¸ÂÁö ¾Ê½À´Ï´Ù.");
 		   	history.go(-1);
 		    </script>
 		<% 

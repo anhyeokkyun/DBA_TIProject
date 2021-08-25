@@ -193,6 +193,8 @@ def run():
 
     # Send the E-MAIL
     s.sendmail(email_addr, email_addr, msg.as_string())
+    print("Please check your administrator E-MAIL!")
+    
     s.quit()
     connection.close()
     return result
